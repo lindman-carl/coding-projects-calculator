@@ -1,54 +1,36 @@
 import React, { useState } from "react";
+
+// components
 import CalculatorButton from "./components/CalculatorButton";
 
-import { evaluate } from "mathjs";
-
-const buttonLabels = [
-  "(",
-  ")",
-  "%",
-  "C",
-  "7",
-  "8",
-  "9",
-  "*",
-  "4",
-  "5",
-  "6",
-  "/",
-  "1",
-  "2",
-  "3",
-  "-",
-  "0",
-  ".",
-  "=",
-  "+",
-];
+// utils
+import {
+  evaluateCalculatorInstructions,
+  buttonLabels,
+} from "./utils/calculator";
 
 function App() {
+  // state
   const [calculatorInstructions, setCalculatorInstructions] =
     useState<string>("");
   const [calculatorError, setCalculatorError] = useState<string>("");
 
-  const evaluateCalculatorInstructions = () => {
-    console.log(calculatorInstructions);
-    // evaluate expression
-    try {
-      const evaluatedExpression = evaluate(calculatorInstructions);
-      // set results and show results
-      setCalculatorInstructions(evaluatedExpression);
-    } catch (err) {
-      setCalculatorError("Error evaluating expression");
-      console.error(err);
+  // eventhandler
+  const handleCalculatorEvaluation = () => {
+    const [results, errorMsg] = evaluateCalculatorInstructions(
+      calculatorInstructions
+    );
+    if (errorMsg === undefined) {
+      setCalculatorInstructions(results);
+    } else {
+      setCalculatorError(errorMsg);
     }
   };
-
   const handleCalculatorClick = (label: string) => {
     // handle special cases first, default behaviour for the rest
     switch (label) {
       case "=":
-        evaluateCalculatorInstructions();
+        handleCalculatorEvaluation();
         break;
       case "C":
         // remove error if their is one
@@ -62,6 +44,7 @@ function App() {
         setCalculatorInstructions(newInstructions);
         break;
       default:
+        // default behaviour is to append button label to instructions
         setCalculatorInstructions(calculatorInstructions + label);
         break;
     }
@@ -72,10 +55,10 @@ function App() {
     // prevent default submit behaviour
     event.preventDefault();
     // evaluate math expression
-    evaluateCalculatorInstructions();
+    handleCalculatorEvaluation();
   };
 
-  const inputValue = (): string => {
+  const getInputValue = (): string => {
     if (calculatorError.length === 0) {
       return calculatorInstructions;
     }
@@ -89,7 +72,7 @@ function App() {
         <form className="col-span-4" onSubmit={handleSubmit}>
           <input
             className="calculator-display-input"
-            value={inputValue()}
+            value={getInputValue()}
             onChange={(event) => {
               setCalculatorInstructions(event.target.value);
             }}
@@ -98,6 +81,7 @@ function App() {
                 setCalculatorError("");
               }
             }}
+            autoFocus
           />
         </form>
 
