@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import CalculatorApp from "./CalculatorApp";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
@@ -9,20 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <div className="flex flex-col justify-center items-center sm:h-screen p-2">
-      <CalculatorApp />
-      <div className="m-2 font-light">
-        <div className="font-thin">Press ENTER to calculate</div>
-        <br />
-        @CarlLindman -{" "}
-        <a
-          href="https://github.com/yoga-python/coding-projects-calculator"
-          className="underline decoration-sky-800"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <App />
   </React.StrictMode>
 );
 

@@ -13,12 +13,6 @@ body {
   @apply bg-sky-200;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
 @layer components {
   /* Calculator Container */
   .calculator-container {
@@ -66,5 +60,14 @@ code {
       shadow-md;
       
     outline: none;
+  }
+
+  /* App */
+  .app-container {
+    @apply
+      w-full h-full sm:h-screen 
+      flex flex-col justify-center items-center 
+      p-2 
+      text-center;
   }
 }
