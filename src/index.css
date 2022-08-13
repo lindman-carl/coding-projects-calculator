@@ -9,6 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @apply bg-sky-200;
 }
 
 code {
@@ -22,7 +24,12 @@ code {
   .calculator-container {
     @apply 
       grid grid-cols-4 grid-flow-row gap-1 
-      w-full sm:max-w-sm;
+      w-full sm:max-w-sm
+      bg-slate-300
+      shadow-xl
+      rounded
+      p-2
+      border border-slate-500;
   }
   /* Calculator Button */
   .calculator-button {
@@ -33,7 +40,7 @@ code {
       bg-slate-400
       text-sky-50
       font-semibold
-      text-xl
+      text-2xl
       shadow-md
       cursor-pointer
       /* hover:bg-slate-400 */
@@ -53,9 +60,9 @@ code {
       rounded
       bg-sky-800
       text-sky-50
-      font-medium
+      font-normal
       text-right
-      text-2xl
+      text-3xl
       shadow-md
       ;
     outline: none;

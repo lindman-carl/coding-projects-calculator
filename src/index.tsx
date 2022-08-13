@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <div className="flex justify-center p-1">
+    <div className="flex justify-center sm:items-center sm:h-screen">
       <CalculatorApp />
     </div>
   </React.StrictMode>
