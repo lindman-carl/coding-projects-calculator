@@ -9,7 +9,7 @@ import {
   buttonLabels,
 } from "./utils/calculator";
 
-function App() {
+const CalculatorApp = () => {
   // state
   const [calculatorInstructions, setCalculatorInstructions] =
     useState<string>("");
@@ -95,6 +95,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
-export default App;
+export default CalculatorApp;
