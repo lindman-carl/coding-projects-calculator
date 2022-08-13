@@ -2,19 +2,28 @@ import React from "react";
 
 type Props = {
   label: string;
+  onClick: any;
 };
 
 const isNumber = (value: string) => {
   return /^-?\d+$/.test(value);
 };
 
-const CalculatorButton = ({ label }: Props) => {
+const CalculatorButton = ({ label, onClick }: Props) => {
   // check for special character
   if (!isNumber(label)) {
-    return <div className="calculator-button bg-orange-600">{label}</div>;
+    return (
+      <button className="calculator-button bg-orange-400" onClick={onClick}>
+        {label}
+      </button>
+    );
   }
 
-  return <div className="calculator-button">{label}</div>;
+  return (
+    <button className="calculator-button" onClick={onClick}>
+      {label}
+    </button>
+  );
 };
 
 export default CalculatorButton;

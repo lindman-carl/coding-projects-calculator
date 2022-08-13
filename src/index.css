@@ -21,17 +21,18 @@ code {
   /* Calculator Button */
   .calculator-button {
     @apply 
-      w-16 h-8
+      w-16 h-16
       flex justify-center items-center
       rounded
       bg-slate-400
       text-sky-50
       font-semibold
-      text-lg
+      text-xl
       shadow-md
       cursor-pointer
       /* hover:bg-slate-400 */
       hover:scale-95
+      active:scale-90
       transition-all ease-in-out duration-100
       ;
   }
@@ -39,13 +40,25 @@ code {
   /* Calculator Display */
   .calculator-display {
     @apply 
-      h-16
-      px-4
+      h-24
       flex justify-end items-center
       rounded
       bg-slate-600
       text-sky-50
       font-medium
+      text-2xl
+      shadow-md
+      ;
+  }
+  .calculator-display-input {
+    @apply 
+      p-2
+      h-24
+      rounded
+      bg-slate-600
+      text-sky-50
+      font-medium
+      text-right
       text-2xl
       shadow-md
       ;
