@@ -10,17 +10,18 @@ const isNumber = (value: string) => {
 };
 
 const CalculatorButton = ({ label, onClick }: Props) => {
+  // base color
+  let buttonColor = "bg-slate-400";
+
   // check for special character
-  if (!isNumber(label)) {
-    return (
-      <button className="calculator-button bg-orange-400" onClick={onClick}>
-        {label}
-      </button>
-    );
+  if (label === "=") {
+    buttonColor = "bg-sky-800";
+  } else if (!isNumber(label) && label !== ".") {
+    buttonColor = "bg-blue-400";
   }
 
   return (
-    <button className="calculator-button" onClick={onClick}>
+    <button className={`calculator-button ${buttonColor}`} onClick={onClick}>
       {label}
     </button>
   );
