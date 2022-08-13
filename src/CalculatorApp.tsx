@@ -83,6 +83,7 @@ const CalculatorApp = () => {
             }
           }}
           autoFocus
+          aria-label="calculator display"
         />
       </form>
       {/* Calculator buttons */}
