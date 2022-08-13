@@ -22,7 +22,7 @@ const CalculatorButton = ({ label, onClick }: Props) => {
 
   return (
     <button className={`calculator-button ${buttonColor}`} onClick={onClick}>
-      {label}
+      <div className="drop-shadow">{label}</div>
     </button>
   );
 };
