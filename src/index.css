@@ -15,3 +15,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@layer components {
+  /* Calculator Button */
+  .calculator-button {
+    @apply 
+      w-16 h-8
+      flex justify-center items-center
+      rounded
+      bg-slate-500
+      text-gray-50
+      font-semibold
+      text-lg
+      shadow-md
+      cursor-pointer
+      hover:bg-slate-400
+      /* hover:scale-95 */
+      transition-all ease-in-out duration-100
+      ;
+  }
+}
