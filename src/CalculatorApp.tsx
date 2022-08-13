@@ -15,7 +15,7 @@ const CalculatorApp = () => {
     useState<string>("");
   const [calculatorError, setCalculatorError] = useState<string>("");
 
-  // eventhandler
+  // eventhandlers
   const handleCalculatorEvaluation = () => {
     const [results, errorMsg] = evaluateCalculatorInstructions(
       calculatorInstructions
@@ -26,6 +26,7 @@ const CalculatorApp = () => {
       setCalculatorError(errorMsg);
     }
   };
+
   const handleCalculatorClick = (label: string) => {
     // handle special cases first, default behaviour for the rest
     switch (label) {
@@ -67,34 +68,32 @@ const CalculatorApp = () => {
   };
 
   return (
-    <div className="flex flex-col justify-start items-center border w-screen h-screen">
-      <div className="grid grid-cols-4 grid-flow-row gap-1 w-full sm:max-w-sm my-4">
-        {/* Calculator display */}
-        <form className="col-span-4" onSubmit={handleSubmit}>
-          <input
-            className="calculator-display-input"
-            value={getInputValue()}
-            onChange={(event) => {
-              setCalculatorInstructions(event.target.value);
-            }}
-            onClick={() => {
-              if (calculatorError.length > 0) {
-                setCalculatorError("");
-              }
-            }}
-            autoFocus
-          />
-        </form>
+    <div className="calculator-container">
+      {/* Calculator display */}
+      <form className="col-span-4" onSubmit={handleSubmit}>
+        <input
+          className="calculator-display-input"
+          value={getInputValue()}
+          onChange={(event) => {
+            setCalculatorInstructions(event.target.value);
+          }}
+          onClick={() => {
+            if (calculatorError.length > 0) {
+              setCalculatorError("");
+            }
+          }}
+          autoFocus
+        />
+      </form>
 
-        {/* Calculator buttons */}
-        {buttonLabels.map((label, idx) => (
-          <CalculatorButton
-            key={idx}
-            label={label}
-            onClick={() => handleCalculatorClick(label)}
-          />
-        ))}
-      </div>
+      {/* Calculator buttons */}
+      {buttonLabels.map((label, idx) => (
+        <CalculatorButton
+          key={idx}
+          label={label}
+          onClick={() => handleCalculatorClick(label)}
+        />
+      ))}
     </div>
   );
 };
