@@ -1,5 +1,5 @@
 # Coding projects #1 - Calculator
 
-- React
+- React.js
 - TypeScript
-- TailwindCss
+- tailwindcss
