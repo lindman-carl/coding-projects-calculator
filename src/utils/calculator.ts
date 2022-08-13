@@ -26,7 +26,8 @@ export const buttonLabels = [
 export const evaluateCalculatorInstructions = (
   instructions: string
 ): [string, string | undefined] => {
-  let results, errorMsg;
+  let results = "";
+  let errorMsg;
   // evaluate expression
   try {
     results = evaluate(instructions).toString();
