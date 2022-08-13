@@ -12,6 +12,8 @@ root.render(
     <div className="flex flex-col justify-center sm:items-center sm:h-screen">
       <CalculatorApp />
       <div className="m-2 font-light">
+        <div className="font-thin">Press ENTER to calculate</div>
+        <br />
         @CarlLindman -{" "}
         <a
           href="https://github.com/yoga-python/coding-projects-calculator"
