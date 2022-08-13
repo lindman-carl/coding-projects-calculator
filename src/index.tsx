@@ -9,8 +9,17 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <div className="flex justify-center sm:items-center sm:h-screen">
+    <div className="flex flex-col justify-center sm:items-center sm:h-screen">
       <CalculatorApp />
+      <div className="m-2 font-light">
+        @CarlLindman -{" "}
+        <a
+          href="https://github.com/yoga-python/coding-projects-calculator"
+          className="underline decoration-sky-800"
+        >
+          GitHub
+        </a>
+      </div>
     </div>
   </React.StrictMode>
 );

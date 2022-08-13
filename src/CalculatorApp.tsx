@@ -85,7 +85,6 @@ const CalculatorApp = () => {
           autoFocus
         />
       </form>
-
       {/* Calculator buttons */}
       {buttonLabels.map((label, idx) => (
         <CalculatorButton
