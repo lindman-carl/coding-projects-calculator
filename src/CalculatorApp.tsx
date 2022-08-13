@@ -67,8 +67,9 @@ const CalculatorApp = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center m-4">
-      <div className="grid grid-cols-4 grid-flow-row gap-1">
+    <div className="flex flex-col justify-start items-center border w-screen h-screen">
+      <div className="grid grid-cols-4 grid-flow-row gap-1 w-full sm:max-w-sm my-4">
+        {/* Calculator display */}
         <form className="col-span-4" onSubmit={handleSubmit}>
           <input
             className="calculator-display-input"
@@ -85,6 +86,7 @@ const CalculatorApp = () => {
           />
         </form>
 
+        {/* Calculator buttons */}
         {buttonLabels.map((label, idx) => (
           <CalculatorButton
             key={idx}

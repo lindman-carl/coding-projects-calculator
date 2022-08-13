@@ -21,7 +21,7 @@ code {
   /* Calculator Button */
   .calculator-button {
     @apply 
-      w-16 h-16
+      min-w-[4rem] min-h-[4rem]
       flex justify-center items-center
       rounded
       bg-slate-400
@@ -41,8 +41,9 @@ code {
   /* Calculator Display */
   .calculator-display-input {
     @apply 
+      min-h-[6rem]
+      w-full
       p-2
-      h-24
       rounded
       bg-sky-800
       text-sky-50
