@@ -16,6 +16,8 @@ const CalculatorButton = ({ label, onClick }: Props) => {
   // check for special character
   if (label === "=") {
     buttonColor = "bg-sky-800";
+  } else if (label === "C") {
+    buttonColor = "bg-orange-500";
   } else if (!isNumber(label) && label !== ".") {
     buttonColor = "bg-blue-400";
   }
