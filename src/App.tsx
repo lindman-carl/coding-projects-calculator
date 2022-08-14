@@ -7,7 +7,7 @@ const App = () => {
   return (
     <ThemeProvider initialTheme="light">
       <div className="app-container">
-        <div className="flex flex-row items-center text-5xl font-bold text-sky-800 dark:text-purple-100 drop-shadow my-8">
+        <div className="flex flex-row items-center gap-4 text-6xl font-bold text-sky-800 dark:text-purple-100 drop-shadow my-8">
           Calculator
           <ThemeToggleButton />
         </div>
