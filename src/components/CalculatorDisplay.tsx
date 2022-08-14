@@ -1,7 +1,7 @@
 import React from "react";
 
-import { FaRegClipboard } from "react-icons/fa";
-import { toast } from "react-toastify";
+import { TbClipboardText } from "react-icons/tb";
+import { toast, ToastOptions } from "react-toastify";
 
 // avoid prop drilling
 type Props = {
@@ -20,49 +20,47 @@ type ClipboardButtonProps = {
   value: string;
 };
 
+const basicToast: ToastOptions = {
+  position: "bottom-right",
+  autoClose: 2000,
+  hideProgressBar: true,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+};
+
 const ClipboardButton = ({ value }: ClipboardButtonProps) => {
   const copyCalculatorInstructionsToClipboard = async () => {
     if (value.length > 0) {
       // copy to clipboard
       copyToClipboard(value);
-      toast(`${value} copied to clipboard`, {
-        position: "bottom-right",
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+      toast.info(`${value} copied to clipboard`, {
+        ...basicToast,
       });
 
       return;
     }
 
-    toast(`Do math first`, {
-      position: "bottom-right",
-      autoClose: 2000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
+    toast(`Do math first`, basicToast);
   };
 
   return (
     <div
-      className="w-24 h-8
-        border-b border-r rounded-br-md
+      className="w-24 h-10
+        rounded-br-md
         text-sky-100 dark:text-purple-100
-        bg-sky-400 bg-opacity-20
+        bg-sky-300 dark:bg-purple-300
+        bg-opacity-20 dark:bg-opacity-20
         hover:scale-95
         cursor-pointer
+        shadow
      "
       aria-label="Copy to clipboard"
       title="Copy to clipboard (Ctrl+C)"
       onClick={copyCalculatorInstructionsToClipboard}
     >
-      <FaRegClipboard className="w-full h-full p-1" />
+      <TbClipboardText className="w-full h-full p-2" />
     </div>
   );
 };
