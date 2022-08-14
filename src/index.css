@@ -85,4 +85,17 @@ body {
       text-sky-800 dark:text-purple-100 
       drop-shadow;
   }
+
+  /* Theme Toggle */
+  .theme-toggle-container {
+    @apply 
+      w-10 h-10 
+      p-2 
+      flex justify-center items-center 
+      transition duration-100 ease-in-out 
+      rounded-lg border-2 border-sky-200 dark:border-purple-700
+      bg-blue-400 dark:bg-purple-600
+      cursor-pointer
+      hover:scale-95;
+  }
 }
