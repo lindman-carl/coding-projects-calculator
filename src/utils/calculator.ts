@@ -33,7 +33,7 @@ export const evaluateCalculatorInstructions = (
     results = evaluate(instructions).toString();
   } catch (err) {
     errorMsg = "Error";
-    console.error(err);
+    // console.error(err);
   }
 
   return [results, errorMsg];
