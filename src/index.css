@@ -75,4 +75,14 @@ body {
       p-2 
       text-center;
   }
+
+  /* App Header */
+  .header-container {
+    @apply 
+      flex flex-row items-center gap-4 
+      my-8
+      text-6xl font-bold 
+      text-sky-800 dark:text-purple-100 
+      drop-shadow;
+  }
 }
