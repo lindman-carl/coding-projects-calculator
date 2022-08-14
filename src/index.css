@@ -9,11 +9,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @apply transition-colors ease-out duration-500
-  bg-sky-100
-  dark:bg-zinc-600 
-  bg-back-pattern;
 }
 
 @layer components {
@@ -62,9 +57,8 @@ body {
       font-normal
       text-right
       text-3xl
-      drop-shadow-lg;
-      
-    outline: none;
+      drop-shadow-lg
+      outline-none;
   }
 
   /* App */
@@ -73,6 +67,9 @@ body {
       w-full h-full sm:h-screen 
       flex flex-col justify-center items-center 
       p-2 
+      bg-sky-100 dark:bg-zinc-600 
+      bg-back-pattern
+      transition-colors ease-out duration-500
       text-center;
   }
 
@@ -108,6 +105,7 @@ body {
       rounded-br-md
       text-sky-100 dark:text-purple-100
       bg-sky-300 dark:bg-purple-300
+
       bg-opacity-20 dark:bg-opacity-20
       hover:scale-95 origin-top-left
       transition-transform duration-100 ease-in-out
