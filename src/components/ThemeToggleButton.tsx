@@ -2,13 +2,26 @@ import React from "react";
 
 // icons
 import { FaRegMoon, FaRegSun } from "react-icons/fa";
+import useThemeContext from "../hooks/useThemeContext";
 
-type Props = {
-  darkMode: boolean;
+const ThemeToggleButton = () => {
+  const { theme, setTheme } = useThemeContext();
+
+  return (
+    <div className="transition duration-500 ease-in-out rounded-full p-2">
+      {theme === "dark" ? (
+        <FaRegSun
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
+        />
+      ) : (
+        <FaRegMoon
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
+        />
+      )}
+    </div>
+  );
 };
 
-const ThemeToggle = ({ darkMode }: Props) => {
-  return <button>{darkMode ? <FaRegMoon /> : <FaRegSun />}</button>;
-};
-
-export default ThemeToggle;
+export default ThemeToggleButton;
