@@ -6,7 +6,6 @@ module.exports = {
     extend: {
       backgroundImage: {
         "back-pattern": "url('/img/back-pattern.png')",
-        cubes: "url('/img/cubes.png')",
       },
     },
   },
