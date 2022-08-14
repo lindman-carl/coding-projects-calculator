@@ -15,7 +15,7 @@ const ThemeToggleButton = () => {
           data-testid="darkModeIcon"
           size="2rem"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-sky-200 dark:text-purple-100 text-2xl cursor-pointer"
+          className="text-purple-100 text-2xl cursor-pointer"
         />
       ) : (
         <FaRegMoon
@@ -23,7 +23,7 @@ const ThemeToggleButton = () => {
           data-testid="darkModeIcon"
           size="2rem"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-sky-200 dark:text-purple-100 text-2xl cursor-pointer"
+          className="text-sky-100 text-2xl cursor-pointer"
         />
       )}
     </div>
