@@ -2,6 +2,8 @@ import React from "react";
 import CalculatorApp from "./CalculatorApp";
 import ThemeToggleButton from "./components/ThemeToggleButton";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
@@ -24,6 +26,17 @@ const App = () => {
             </a>
           </div>
         </div>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     </ThemeProvider>
   );

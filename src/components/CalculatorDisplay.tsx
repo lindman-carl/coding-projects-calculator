@@ -1,6 +1,7 @@
 import React from "react";
 
 import { FaRegClipboard } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 // avoid prop drilling
 type Props = {
@@ -21,7 +22,31 @@ type ClipboardButtonProps = {
 
 const ClipboardButton = ({ value }: ClipboardButtonProps) => {
   const copyCalculatorInstructionsToClipboard = async () => {
-    copyToClipboard(value);
+    if (value.length > 0) {
+      // copy to clipboard
+      copyToClipboard(value);
+      toast(`${value} copied to clipboard`, {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
+      return;
+    }
+
+    toast(`Do math first`, {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   return (
