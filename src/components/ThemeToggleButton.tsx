@@ -8,16 +8,18 @@ const ThemeToggleButton = () => {
   const { theme, setTheme } = useThemeContext();
 
   return (
-    <div className="transition duration-500 ease-in-out rounded-full p-2">
+    <div className="w-10 h-10 flex justify-center items-center transition duration-100 ease-in-out rounded-lg p-2 border-2 border-sky-200 dark:border-purple-500 bg-sky-500 dark:bg-purple-800">
       {theme === "dark" ? (
         <FaRegSun
+          size="2rem"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
+          className="text-sky-200 dark:text-purple-100 text-2xl cursor-pointer"
         />
       ) : (
         <FaRegMoon
+          size="2rem"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
+          className="text-sky-200 dark:text-purple-100 text-2xl cursor-pointer"
         />
       )}
     </div>
