@@ -10,10 +10,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @apply transition-all ease-in-out duration-700
+  @apply transition-colors ease-out duration-500
   bg-sky-100
   dark:bg-zinc-600 
-  dark:bg-back-pattern;
+  bg-back-pattern;
 }
 
 @layer components {
@@ -92,9 +92,11 @@ body {
       w-10 h-10 
       p-2 
       flex justify-center items-center 
-      transition duration-100 ease-in-out 
-      rounded-lg border-2 border-sky-200 dark:border-purple-700
-      bg-blue-400 dark:bg-purple-600
+      transition duration-200 ease-in-out 
+      rounded-lg
+      bg-orange-500 dark:bg-purple-800
+      text-sky-100 dark:text-purple-100
+      shadow-md
       cursor-pointer
       hover:scale-95;
   }

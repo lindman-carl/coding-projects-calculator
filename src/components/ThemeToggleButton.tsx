@@ -7,6 +7,10 @@ import useThemeContext from "../hooks/useThemeContext";
 const ThemeToggleButton = () => {
   const { theme, setTheme } = useThemeContext();
 
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
     <div className="theme-toggle-container">
       {theme === "dark" ? (
@@ -14,16 +18,14 @@ const ThemeToggleButton = () => {
           aria-label="dark mode icon"
           data-testid="darkModeIcon"
           size="2rem"
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-purple-100"
+          onClick={toggleTheme}
         />
       ) : (
         <FaRegMoon
           aria-label="dark mode icon"
           data-testid="darkModeIcon"
           size="2rem"
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-sky-100"
+          onClick={toggleTheme}
         />
       )}
     </div>
