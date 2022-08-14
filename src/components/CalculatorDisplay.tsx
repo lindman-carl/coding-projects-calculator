@@ -52,7 +52,8 @@ const ClipboardButton = ({ value }: ClipboardButtonProps) => {
         text-sky-100 dark:text-purple-100
         bg-sky-300 dark:bg-purple-300
         bg-opacity-20 dark:bg-opacity-20
-        hover:scale-95
+        hover:scale-95 origin-top-left
+        transition-transform duration-100 ease-in-out
         cursor-pointer
         shadow
      "
