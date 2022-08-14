@@ -10,7 +10,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @apply bg-sky-200 dark:bg-zinc-600;
+  @apply transition-all ease-in-out duration-700
+  bg-sky-100
+  dark:bg-zinc-600 
+  dark:bg-back-pattern;
 }
 
 @layer components {
@@ -34,6 +37,7 @@ body {
       bg-slate-400 dark:bg-amber-600
       text-sky-50 dark:text-purple-100
       font-semibold
+      font-mono
       text-2xl
       shadow-md
       cursor-pointer
@@ -52,12 +56,13 @@ body {
       py-2
       px-4
       rounded
+      font-mono
       bg-sky-800 dark:bg-zinc-800
       text-sky-50 dark:text-purple-100
       font-normal
       text-right
       text-3xl
-      shadow-md;
+      drop-shadow-lg;
       
     outline: none;
   }

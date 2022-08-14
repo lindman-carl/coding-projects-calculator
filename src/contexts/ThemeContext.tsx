@@ -1,19 +1,27 @@
 import React from "react";
 
-const getInitialTheme = () => {
-  if (typeof window !== "undefined" && window.localStorage) {
-    const storedPrefs = window.localStorage.getItem("color-theme");
-    if (typeof storedPrefs === "string") {
-      return storedPrefs;
-    }
+const isDarkTime = () => {
+  const darkHours = {
+    start: 20,
+    end: 8,
+  };
 
-    const userMedia = window.matchMedia("(prefers-color-scheme: dark)");
-    if (userMedia.matches) {
-      return "dark";
-    }
+  const date = new Date();
+  const now = date.getHours();
+
+  if (now >= darkHours.start || now < darkHours.end) {
+    // initialize with darkMode from 20:00 to 08:00
+    return true;
   }
+  // else not darkMode
+  return false;
+};
 
-  return "light"; // light theme as the default;
+const getInitialTheme = () => {
+  const darkMode = isDarkTime();
+  const theme = darkMode ? "dark" : "light";
+
+  return theme;
 };
 
 type Props = {
