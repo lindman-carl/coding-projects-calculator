@@ -39,14 +39,14 @@ const ClipboardButton = ({ value }: ClipboardButtonProps) => {
   };
 
   return (
-    <div
+    <button
       className="clipboard-button"
       aria-label="Copy to clipboard"
       title="Copy to clipboard (Ctrl+C)"
       onClick={copyCalculatorInstructionsToClipboard}
     >
       <TbClipboardText className="w-full h-full p-2" />
-    </div>
+    </button>
   );
 };
 export default ClipboardButton;
