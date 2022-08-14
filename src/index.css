@@ -38,7 +38,7 @@ body {
       cursor-pointer
       hover:scale-95
       active:scale-90
-      transition-all ease-in-out duration-75
+      transition-all ease-in-out duration-150
       select-none
       ;
   }
