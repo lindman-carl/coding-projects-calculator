@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 // components
 import CalculatorButton from "./components/CalculatorButton";
+import CalculatorDisplay from "./components/CalculatorDisplay";
 
 // utils
 import {
@@ -70,22 +71,13 @@ const CalculatorApp = () => {
   return (
     <div className="calculator-container">
       {/* Calculator display */}
-      <form className="col-span-4" onSubmit={handleSubmit}>
-        <input
-          className="calculator-display-input"
-          value={getInputValue()}
-          onChange={(event) => {
-            setCalculatorInstructions(event.target.value);
-          }}
-          onClick={() => {
-            if (calculatorError.length > 0) {
-              setCalculatorError("");
-            }
-          }}
-          autoFocus
-          aria-label="calculator display"
-        />
-      </form>
+      <CalculatorDisplay
+        handleSubmit={handleSubmit}
+        getInputValue={getInputValue}
+        setCalculatorError={setCalculatorError}
+        setCalculatorInstructions={setCalculatorInstructions}
+        calculatorError={calculatorError}
+      />
       {/* Calculator buttons */}
       {buttonLabels.map((label, idx) => (
         <CalculatorButton
