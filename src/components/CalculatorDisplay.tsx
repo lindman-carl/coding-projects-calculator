@@ -1,5 +1,7 @@
 import React from "react";
 
+import { FaRegClipboard } from "react-icons/fa";
+
 // avoid prop drilling
 type Props = {
   handleSubmit: React.FormEventHandler<HTMLFormElement>;
@@ -7,6 +9,37 @@ type Props = {
   setCalculatorInstructions: React.Dispatch<React.SetStateAction<string>>;
   getInputValue: () => string;
   calculatorError: string;
+};
+
+const copyToClipboard = async (text: string) => {
+  await navigator.clipboard.writeText(text);
+};
+
+type ClipboardButtonProps = {
+  value: string;
+};
+
+const ClipboardButton = ({ value }: ClipboardButtonProps) => {
+  const copyCalculatorInstructionsToClipboard = async () => {
+    copyToClipboard(value);
+  };
+
+  return (
+    <div
+      className="w-24 h-8
+        border-b border-r rounded-br-md
+        text-sky-100 dark:text-purple-100
+        bg-sky-400 bg-opacity-20
+        hover:scale-95
+        cursor-pointer
+     "
+      aria-label="Copy to clipboard"
+      title="Copy to clipboard (Ctrl+C)"
+      onClick={copyCalculatorInstructionsToClipboard}
+    >
+      <FaRegClipboard className="w-full h-full p-1" />
+    </div>
+  );
 };
 
 const CalculatorDisplay = ({
@@ -17,22 +50,27 @@ const CalculatorDisplay = ({
   calculatorError,
 }: Props) => {
   return (
-    <form className="col-span-4" onSubmit={handleSubmit}>
-      <input
-        className="calculator-display-input"
-        value={getInputValue()}
-        onChange={(event) => {
-          setCalculatorInstructions(event.target.value);
-        }}
-        onClick={() => {
-          if (calculatorError.length > 0) {
-            setCalculatorError("");
-          }
-        }}
-        autoFocus
-        aria-label="calculator display"
-      />
-    </form>
+    <div className="col-span-4">
+      <div className="absolute z-10">
+        <ClipboardButton value={getInputValue()} />
+      </div>
+      <form className="relative" onSubmit={handleSubmit}>
+        <input
+          className="calculator-display-input"
+          value={getInputValue()}
+          onChange={(event) => {
+            setCalculatorInstructions(event.target.value);
+          }}
+          onClick={() => {
+            if (calculatorError.length > 0) {
+              setCalculatorError("");
+            }
+          }}
+          autoFocus
+          aria-label="calculator display"
+        />
+      </form>
+    </div>
   );
 };
 
