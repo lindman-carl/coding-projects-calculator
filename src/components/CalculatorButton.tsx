@@ -11,15 +11,15 @@ const isNumber = (value: string) => {
 
 const CalculatorButton = ({ label, onClick }: Props) => {
   // base color
-  let buttonColor = "bg-slate-400";
+  let buttonColor = "bg-slate-400 dark:bg-amber-700";
 
   // check for special character
   if (label === "=") {
-    buttonColor = "bg-sky-800";
+    buttonColor = "bg-sky-800 dark:bg-amber-900";
   } else if (label === "C") {
-    buttonColor = "bg-orange-500";
+    buttonColor = "bg-orange-500 dark:bg-purple-800";
   } else if (!isNumber(label) && label !== ".") {
-    buttonColor = "bg-blue-400";
+    buttonColor = "bg-blue-400 dark:bg-purple-600";
   }
 
   return (

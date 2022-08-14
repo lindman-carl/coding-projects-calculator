@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @apply bg-sky-200;
+  @apply bg-sky-200 dark:bg-zinc-600;
 }
 
 @layer components {
@@ -19,7 +19,7 @@ body {
     @apply 
       grid grid-cols-4 grid-flow-row gap-1 
       w-full sm:max-w-sm
-      bg-slate-300
+      bg-slate-300 dark:bg-zinc-400
       shadow-xl
       rounded
       p-2
@@ -31,13 +31,12 @@ body {
       min-w-[4rem] min-h-[4rem]
       flex justify-center items-center
       rounded
-      bg-slate-400
-      text-sky-50
+      bg-slate-400 dark:bg-amber-600
+      text-sky-50 dark:text-purple-100
       font-semibold
       text-2xl
       shadow-md
       cursor-pointer
-      /* hover:bg-slate-400 */
       hover:scale-95
       active:scale-90
       transition-all ease-in-out duration-75
@@ -53,8 +52,8 @@ body {
       py-2
       px-4
       rounded
-      bg-sky-800
-      text-sky-50
+      bg-sky-800 dark:bg-zinc-800
+      text-sky-50 dark:text-purple-100
       font-normal
       text-right
       text-3xl
