@@ -18,23 +18,34 @@ const CalculatorDisplay = ({
   setCalculatorError,
   calculatorError,
 }: Props) => {
+  const displayValue = getInputValue();
+
+  // eventhandlers
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (calculatorError.length > 0) {
+      setCalculatorError("");
+    } else {
+      setCalculatorInstructions(event.target.value);
+    }
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
+    if (calculatorError.length > 0) {
+      setCalculatorError("");
+    }
+  };
+
   return (
     <div className="col-span-4">
       <div className="absolute z-10">
-        <ClipboardButton value={getInputValue()} />
+        <ClipboardButton value={displayValue} />
       </div>
       <form className="relative" onSubmit={handleSubmit}>
         <input
           className="calculator-display-input"
-          value={getInputValue()}
-          onChange={(event) => {
-            setCalculatorInstructions(event.target.value);
-          }}
-          onClick={() => {
-            if (calculatorError.length > 0) {
-              setCalculatorError("");
-            }
-          }}
+          value={displayValue}
+          onChange={handleChange}
+          onClick={handleClick}
           autoFocus
           aria-label="calculator display"
         />
