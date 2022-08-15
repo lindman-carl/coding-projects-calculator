@@ -96,4 +96,20 @@ body {
       cursor-pointer
       shadow;
   }
+
+  /* Theme Toggle */
+  .theme-toggle-container {
+    @apply 
+      w-10 h-10 
+      p-2 
+      flex justify-center items-center 
+      transition duration-200 ease-in-out 
+      rounded-lg
+      bg-light-accent dark:bg-dark-accent
+      text-light-text dark:text-dark-text
+      shadow-md
+      cursor-pointer
+      hover:scale-95
+      active:scale-90;
+    }
 }

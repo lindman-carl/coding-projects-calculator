@@ -1,8 +1,5 @@
 import React from "react";
 
-// css
-import styles from "./ThemeToggleButton.module.css";
-
 // icons
 import { FaRegMoon, FaRegSun } from "react-icons/fa";
 import useThemeContext from "../hooks/useThemeContext";
@@ -15,7 +12,7 @@ const ThemeToggleButton = () => {
   };
 
   return (
-    <div className={styles["theme-toggle-container"]}>
+    <div className={"theme-toggle-container"}>
       {theme === "dark" ? (
         <FaRegSun
           aria-label="dark mode icon"
