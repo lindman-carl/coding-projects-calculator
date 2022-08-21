@@ -62,8 +62,9 @@ body {
   /* App */
   .app-container {
     @apply
-      w-full h-full sm:h-screen 
-      flex flex-col justify-center items-center 
+      w-full h-screen sm:h-screen 
+      flex flex-col justify-start items-center 
+      sm:justify-center
       p-2 
       bg-light-background dark:bg-dark-background
       bg-back-pattern
