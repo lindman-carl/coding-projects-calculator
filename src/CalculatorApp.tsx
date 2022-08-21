@@ -40,10 +40,16 @@ const CalculatorApp = () => {
           setCalculatorError("");
           break;
         }
-
         // remove last character in string
         const newInstructions = calculatorInstructions.slice(0, -1);
         setCalculatorInstructions(newInstructions);
+        break;
+      case ".":
+        // dont allow multiple dots in a succession
+        if (calculatorInstructions.slice(-1) === ".") {
+          break;
+        }
+        setCalculatorInstructions(calculatorInstructions + label);
         break;
       default:
         // default behaviour is to append button label to instructions
